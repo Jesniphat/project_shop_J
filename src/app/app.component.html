@@ -1,3 +1,16 @@
-<h1>
-  {{title}}
-</h1>
+<div class="ui-g">
+    <div class="ui-g-12 ui-g-nopad" [hidden]="hiddenLogin" style="background-color: #20272A; color:#889597;">
+        <topbar></topbar>
+    </div>
+    <div class="ui-g-12 ui-g-nopad ui-md-2" [hidden]="hiddenLogin" style="background-color: #20272A; color:#889597;">
+        <menu style="padding:0px;margin-top: 0px;"></menu>
+    </div>
+    <div class="ui-g-12 ui-g-nopad" [class.ui-md-10]="myClass10">
+        <div class="ui-g-12" style="min-height: 594px; background-color:white;">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    <div class="ui-g-12" [hidden]="hiddenLogin" style="background-color: #20272A; color:#889597;">
+        Footer
+    </div>
+</div>

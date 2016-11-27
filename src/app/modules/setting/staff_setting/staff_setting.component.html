@@ -1,0 +1,24 @@
+<div class="ui-g">แก้ไขข้อมูลผู้ใช้งาน</div>
+<br/>
+<div class="ui-g">
+  <div class="ui-g-12">
+      <label for="staffName">Staff Name:</label>
+      <br/>
+      <input class="form-control" id="staffName" type="text" pInputText [(ngModel)]="staffName" />
+  </div>
+</div>
+<div class="ui-g">
+  <div class="ui-g-12">
+      <label for="staffUserName">User Name:</label>
+      <br/>
+      <input class="form-control" id="staffUserName" type="text" pInputText [(ngModel)]="staffUserName" />
+  </div>
+</div>
+<div class="ui-g">
+    <div class="ui-g-12">
+        <button id="sentCatecory" pButton type="button" label="Change" (click)="updateStaff()"></button>
+    </div>
+</div>
+
+
+<p-growl [value]="msgs"></p-growl>

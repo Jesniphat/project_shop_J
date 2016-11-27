@@ -8,7 +8,10 @@
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
     "pree2e": "webdriver-manager update",
-    "e2e": "protractor"
+    "e2e": "protractor",
+    "dev": "concurrently \"tsc -w\" \"ng serve --proxy-config proxy.conf.json\" \"nodemon ./server/bin/www\" ",
+    "prod": "node ./server/bin/www",
+    "buile": "ng build --prod"
   },
   "private": true,
   "dependencies": {
@@ -20,7 +23,13 @@
     "@angular/platform-browser": "2.2.1",
     "@angular/platform-browser-dynamic": "2.2.1",
     "@angular/router": "3.2.1",
+    "bluebird": "^3.4.6",
     "core-js": "^2.4.1",
+    "jwt-simple": "^0.5.1",
+    "moment": "^2.17.0",
+    "mongodb": "^2.2.11",
+    "multer": "^1.2.0",
+    "primeng": "^1.0.0",
     "rxjs": "5.0.0-beta.12",
     "ts-helpers": "^1.1.1",
     "zone.js": "^0.6.23"
@@ -42,6 +51,15 @@
     "ts-node": "1.2.1",
     "tslint": "3.13.0",
     "typescript": "~2.0.3",
-    "webdriver-manager": "10.2.5"
+    "webdriver-manager": "10.2.5",
+    "body-parser": "~1.15.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "express": "~4.14.0",
+    "jade": "~1.11.0",
+    "morgan": "~1.7.0",
+    "serve-favicon": "~2.3.0",
+    "concurrently": "^3.1.0",
+    "nodemon": "^1.11.0"
   }
 }
