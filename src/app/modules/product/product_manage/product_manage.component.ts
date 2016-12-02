@@ -48,10 +48,46 @@ export class ProductManageComponent {
         this.product.id = this.route.snapshot.params['id'];
         console.log("Product Id = ",this.product.id);
         if(this.product.id != "create"){
-            // this.getProductByid(this.productId);
+            this.getProductByid(this.product.id);
         }
 
         this.hideUploadBt();
+    }
+
+    getProductByid(productId:any){
+        let param = {
+            product_id: productId
+        };
+        this.apiService
+            .post("/api/product/getproductbyid", param)
+            .subscribe(
+                res => this.getProductByidDoneAction(res),
+                error => this.getProductByidErrorAction(error)
+            )
+    }
+
+    getProductByidDoneAction(res){
+        // console.log(res);
+        if(res.status === true){
+            // console.log(res);
+            let prodResData = res.data[0];
+            this.product.id = prodResData._id;
+            this.product.name = prodResData.product_name;
+            this.product.desc = prodResData.product_description;
+            this.product.price = prodResData.product_price;
+            this.product.qty = prodResData.product_qty;
+            this.product.picName = prodResData.product_pic;
+
+            console.log("this.product = ", this.product);
+            for( let x = 0; x < prodResData.product_pic.length; x++){
+                // this.product.picName.push(prodResData.product_pic[x]);
+                this.uploadedFiles.push({name: prodResData.product_pic[x]});
+            }
+        }   
+    }
+
+    getProductByidErrorAction(error){
+        console.log(error);
     }
 
     changeStatus(newValue:any) {

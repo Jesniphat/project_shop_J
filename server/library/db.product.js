@@ -116,7 +116,7 @@ module.exports = new function () {
     this.getProductByID = function(id, callbackok, callbackerror){
         var $scope = {};
         $scope.getProductById = [];
-        var getAllCate = function () {
+        var getProduct = function () {
             // let deferred = promise.pending();
             return new Promise(function (resolve, reject) {
                 MongoClient.connect(url, function (err, db) {
@@ -146,7 +146,7 @@ module.exports = new function () {
                 });
             });
         };
-        getAllCate()
+        getProduct()
             .then(function () {
             // console.log("getCate from promise = ", arguments);
             callbackok($scope.getProductById);

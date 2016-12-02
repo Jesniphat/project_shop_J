@@ -38,6 +38,7 @@ export class ProductListComponent {
             link = ['/product_list/product', data._id];
         }
         this.router.navigate(link);
+        // console.log(data._id);
     }
 
     viwe_product_pic(data:any){

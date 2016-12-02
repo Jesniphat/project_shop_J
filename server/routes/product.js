@@ -41,7 +41,7 @@ productRouter.post("/product_list", function (req, res, next) {
 
 //////////////////// Get Product By ID //////////////////////////////////////////////////////////
 productRouter.post("/getproductbyid", function (req, res, next) {
-    //console.log(" รับ cate = ", req.body);
+    // console.log(" รับ product id = ", req.body);
     var data = req.body;
     product.getProductByID(data.product_id, function (prod) {
         res.json({
@@ -56,5 +56,6 @@ productRouter.post("/getproductbyid", function (req, res, next) {
         });
     });
 });
+
 
 module.exports = productRouter;
