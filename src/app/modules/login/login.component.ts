@@ -60,7 +60,7 @@ export class LoginComponent {
             this.storage.setItem('logindata',loginData);
             window.location.href = "#/home";
             // this.$rootScope.loginShow('{"isShow": {"hiddenLogin":false,"loginPading":"225px","class10":true}}');
-            this.$rootScope.loginShow({hiddenLogin:false, loginPading:"225px",class10:true});
+            this.$rootScope.loginShow({hiddenLogin:false, class10:true /*, loginPading:"225px"*/});
             // window.location.reload();
         } else {
             console.log("can't login");

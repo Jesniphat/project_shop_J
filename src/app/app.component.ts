@@ -11,7 +11,7 @@ import "rxjs/add/operator/map";
 export class AppComponent {
 
     hiddenLogin: any = true;
-    loginPading: any = "225px";
+    // loginPading: any = "225px";
     appName: string = "Angular 2 Express";
     myClass10: any = true;
     user: any = {
@@ -47,11 +47,11 @@ export class AppComponent {
     checkLoginDoneAction(res:any){
         if(res.status){
             this.hiddenLogin = false;
-            this.loginPading = "225px";
+            // this.loginPading = "225px";
             this.myClass10 = true;
         }else{
             this.hiddenLogin = true;
-            this.loginPading = "0px";
+            // this.loginPading = "0px";
             this.myClass10 = false;
             window.location.href = "#/login";
         }
@@ -73,7 +73,7 @@ export class AppComponent {
         let show = obj;
         this.hiddenLogin = show.hiddenLogin;
         this.myClass10 = show.class10;
-        this.loginPading = show.loginPading;
+        // this.loginPading = show.loginPading;
       }
     }
 }
