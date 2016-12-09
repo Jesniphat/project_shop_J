@@ -25,7 +25,7 @@ export class CategoryManageComponent {
                            {label:'Unactive', value:'N'}];
 
     private msgs:any;
-    
+
     constructor(
         private router: Router,
         private route: ActivatedRoute,

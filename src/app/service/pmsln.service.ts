@@ -5,7 +5,7 @@ import "rxjs/add/operator/map";
 
 @Injectable()
 export class pmslnService {
-  
+
   constructor(private http: Http) {
       // console.log("check some thing");
   }
@@ -31,6 +31,6 @@ export class pmslnService {
     }
 
     isLoginErrorAction(error:any){
-        console.log(error); 
+        console.log(error);
     }
 }
