@@ -34,7 +34,7 @@ export class TopbarComponent {
     }
 
     setUserData(obj:any){
-      // console.log("do ever");
+      console.log("do ever");
       if(this.storage.getItem('logindata')){
         let logindata = JSON.parse(this.storage.getItem('logindata'));
         this.staffData = logindata;

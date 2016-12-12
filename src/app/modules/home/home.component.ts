@@ -16,7 +16,7 @@ export class HomeComponent {
     }
 
     ngOnInit(){
-        
+
     }
 
     protected() {
@@ -36,8 +36,8 @@ export class HomeComponent {
         this.apiService
             .post("/api/login/checkLogin",param)
             .subscribe(
-                (data) => { 
-                    this.response = data; 
+                (data) => {
+                    this.response = data;
                     console.log("from api service",data);
                 },
                 (error: Error) => {
